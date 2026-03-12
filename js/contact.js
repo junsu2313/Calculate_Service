@@ -1,5 +1,6 @@
 ﻿(function () {
   const contactStorageKey = "life-calculator-contact-draft";
+  const contactEmailAddress = "contact@calc.underlab.work";
 
   const contactForm = document.getElementById("contactForm");
   const contactName = document.getElementById("contactName");
@@ -38,11 +39,11 @@
         contactMessage.value.trim(),
       ].join("\n");
 
-      const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:${encodeURIComponent(contactEmailAddress)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       try {
         window.location.href = mailtoUrl;
-        setFeedback("메일 앱으로 문의 내용을 열었습니다.", "success");
+        setFeedback("문의 메일 작성 화면을 열었습니다.", "success");
       } catch {
         setFeedback("메일 앱을 열지 못했습니다. 내용을 복사해서 사용해 주세요.", "error");
       }
