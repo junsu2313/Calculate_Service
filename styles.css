@@ -710,15 +710,11 @@ details p {
   margin-top: 14px;
 }
 
-.calculators-directory-hero {
-  text-align: center;
-}
-
-.calculators-directory-hero .crumbs,
-.calculators-directory-hero .article-lead {
+.hero-catalog-btn {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .directory-section {
