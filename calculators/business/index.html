@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사업 계산 | 생활 속 계산기</title>
+    <meta
+      name="description"
+      content="부가세, 마진율, 손익분기점, 정산, 견적, 월 고정비 계산기를 한곳에서 볼 수 있는 사업 계산 페이지입니다."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="사업 계산 | 생활 속 계산기" />
+    <meta property="og:description" content="운영과 정산에 필요한 사업 계산기를 한곳에서 확인하세요." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/calculators/business/" />
+    <link rel="canonical" href="https://example.com/calculators/business/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../js/calculator-catalog.js"></script>
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/home.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.LifeCalcHome) {
+          window.LifeCalcHome.initHomePage();
+        }
+      });
+    </script>
+  </head>
+  <body class="calc-page">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../">계산기 목록</a>
+            <a href="../../notices/">공지사항</a>
+            <a href="../../contact/">문의하기</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero calculators-directory-hero">
+        <div class="crumbs"><a href="../../">홈</a> / <a href="../">계산기 목록</a> / 사업 계산</div>
+        <h1>사업 계산</h1>
+        <p class="article-lead">정산과 비용, 수익 구조를 빠르게 확인할 수 있는 사업 계산기 목록입니다.</p>
+      </header>
+
+      <main>
+        <section class="section directory-board">
+          <div class="directory-table">
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../vat/"><strong>부가세 계산기</strong></a></div>
+              <div class="directory-cell directory-description">공급가와 부가세 포함 금액을 빠르게 확인합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../vat/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="vat">추가</button></div>
+            </article>
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../margin/"><strong>마진율 계산기</strong></a></div>
+              <div class="directory-cell directory-description">판매가와 원가 기준 마진액과 마진율을 계산합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../margin/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="margin">추가</button></div>
+            </article>
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../breakeven/"><strong>손익분기점 계산기</strong></a></div>
+              <div class="directory-cell directory-description">고정비와 변동비 기준 손익분기점 수량을 계산합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../breakeven/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="breakeven">추가</button></div>
+            </article>
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../settlement/"><strong>정산 계산기</strong></a></div>
+              <div class="directory-cell directory-description">수수료와 비용을 제외한 실제 정산액을 계산합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../settlement/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="settlement">추가</button></div>
+            </article>
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../estimate/"><strong>견적 계산기</strong></a></div>
+              <div class="directory-cell directory-description">수량, 할인, 부가세를 반영한 최종 견적 금액을 계산합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../estimate/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="estimate">추가</button></div>
+            </article>
+            <article class="directory-row">
+              <div class="directory-cell directory-category">사업</div>
+              <div class="directory-cell directory-title"><a class="directory-title-link" href="../fixedcost/"><strong>월 고정비 계산기</strong></a></div>
+              <div class="directory-cell directory-description">월 고정비 항목을 합산해 운영비를 확인합니다.</div>
+              <div class="directory-cell directory-actions"><a class="text-link" href="../fixedcost/">열기</a><button class="ghost-btn add-calculator-btn" type="button" data-key="fixedcost">추가</button></div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

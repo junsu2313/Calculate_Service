@@ -1,0 +1,9 @@
+﻿{
+  "name": "cashnote-utility-hub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node preview-server.js",
+    "check": "node --check js/site-pages.js && node --check js/calculator-catalog.js && node --check js/common.js && node --check js/home.js && node --check js/calculators.js && node --check js/calculator-search.js && node --check js/contact.js && node --check js/notices.js && node --check js/pages/salary.js && node --check js/pages/loan.js && node --check js/pages/date.js && node --check js/pages/bmi.js && node --check js/pages/age.js && node --check js/pages/percent.js && node --check js/pages/discount.js && node --check js/pages/freelance.js && node --check js/pages/vat.js && node --check js/pages/margin.js && node --check js/pages/breakeven.js && node --check js/pages/settlement.js && node --check js/pages/estimate.js && node --check js/pages/fixedcost.js && node --check theme.js && node scripts/validate-site.js"
+  }
+}

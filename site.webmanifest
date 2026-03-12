@@ -1,0 +1,10 @@
+{
+  "name": "생활 속 계산기",
+  "short_name": "생활계산",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f1e8",
+  "theme_color": "#f7f1e8",
+  "description": "무료 생활 계산기 허브",
+  "icons": []
+}

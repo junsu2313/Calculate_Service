@@ -1,0 +1,32 @@
+﻿(function () {
+  window.LifeCalcSitePages = {
+    siteUrlPlaceholder: "https://example.com",
+    pages: [
+      "/",
+      "/calculators/",
+      "/calculators/finance/",
+      "/calculators/life/",
+      "/calculators/shopping/",
+      "/calculators/business/",
+      "/calculators/search/",
+      "/notices/",
+      "/calculators/salary/",
+      "/calculators/loan/",
+      "/calculators/date/",
+      "/calculators/bmi/",
+      "/calculators/age/",
+      "/calculators/percent/",
+      "/calculators/discount/",
+      "/calculators/freelance/",
+      "/calculators/vat/",
+      "/calculators/margin/",
+      "/calculators/breakeven/",
+      "/calculators/settlement/",
+      "/calculators/estimate/",
+      "/calculators/fixedcost/",
+      "/about/",
+      "/privacy/",
+      "/contact/",
+    ],
+  };
+})();

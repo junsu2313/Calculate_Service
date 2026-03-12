@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>생활 속 계산기 | 자주 쓰는 계산을 한곳에서</title>
+    <meta
+      name="description"
+      content="연봉 실수령액, 대출 상환, 날짜 차이, BMI, 만나이, 퍼센트, 할인율까지 자주 쓰는 계산을 한곳에서 찾고 저장할 수 있는 생활 속 계산기입니다."
+    />
+    <meta
+      name="keywords"
+      content="생활 속 계산기, 무료 계산기, 연봉 계산기, 실수령액 계산기, 대출 계산기, 날짜 계산기, BMI 계산기, 만나이 계산기, 퍼센트 계산기, 할인율 계산기"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="생활 속 계산기 | 자주 쓰는 계산을 한곳에서" />
+    <meta
+      property="og:description"
+      content="자주 쓰는 계산기를 저장하고 바로 이동할 수 있는 생활 계산 서비스."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta name="theme-color" content="#f7f1e8" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="canonical" href="https://example.com/" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./js/site-pages.js"></script>
+    <script defer src="./js/calculator-catalog.js"></script>
+    <script defer src="./js/common.js"></script>
+    <script defer src="./theme.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "생활 속 계산기",
+            "url": "https://example.com/"
+          },
+          {
+            "@type": "Organization",
+            "name": "생활 속 계산기",
+            "url": "https://example.com/"
+          }
+        ]
+      }
+    </script>
+    <script defer src="./js/home.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.LifeCalcHome) {
+          window.LifeCalcHome.initHomePage();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <a class="brand" href="#top">생활 속 계산기</a>
+          <div class="topbar-actions">
+            <div class="topbar-links">
+              <a href="#my-calculators">내 계산기</a>
+              <a href="./calculators/">계산기 목록</a>
+              <a href="./notices/">공지사항</a>
+              <a href="./contact/">문의하기</a>
+            </div>
+            <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+          </div>
+        </nav>
+
+        <div class="hero-grid" id="top">
+          <section class="hero-copy">
+            <h1 class="home-title">생활 계산 도구</h1>
+            <p class="hero-text">필요한 계산기를 고르고 내 목록에 저장할 수 있습니다.</p>
+            <div class="hero-actions">
+              <a class="primary-btn home-primary-btn" href="#my-calculators">내 계산기 보기</a>
+              <a class="ghost-btn" href="./calculators/">계산기 목록</a>
+              <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+            </div>
+            <ul class="hero-metrics">
+              <li><strong>브라우저 저장</strong><span>내 목록 유지</span></li>
+              <li><strong>바로 이동</strong><span>계산기로 즉시 연결</span></li>
+              <li><strong>간단한 구성</strong><span>고르고 바로 사용</span></li>
+            </ul>
+          </section>
+
+          <aside class="hero-panel">
+            <div class="signal-card">
+              <span>현재 저장된 계산기</span>
+              <strong id="savedCountLabel">0개</strong>
+              <p>저장한 계산기를 홈에서 바로 열 수 있습니다.</p>
+              <div class="signal-list">
+                <article>
+                  <strong>내 목록 저장</strong>
+                  <p>선택한 계산기가 브라우저에 저장됩니다.</p>
+                </article>
+                <article>
+                  <strong>빠른 이동</strong>
+                  <p>계산은 상세 페이지에서 바로 할 수 있습니다.</p>
+                </article>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="section intro-band" id="my-calculators">
+          <div>
+            <p class="section-label">내 계산기</p>
+            <h2>내 계산기</h2>
+            <div class="custom-toolbar">
+              <p class="section-caption">현재 브라우저에 저장되며, 직접 지우기 전까지 유지됩니다.</p>
+              <button class="ghost-btn" id="clearSavedCalculators" type="button">목록 비우기</button>
+            </div>
+            <div class="saved-grid" id="savedCalculators"></div>
+            <p class="empty-state" id="savedEmptyState">아직 추가한 계산기가 없습니다.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>생활 속 계산기</strong>
+          <p class="footer-note">자주 쓰는 계산기를 모아두는 생활 계산 서비스</p>
+        </div>
+        <div class="footer-links">
+          <a href="./about/">서비스 소개</a>
+          <a href="./notices/">공지사항</a>
+          <a href="./privacy/">개인정보처리방침</a>
+          <a href="./contact/">문의하기</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

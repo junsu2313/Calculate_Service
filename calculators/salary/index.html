@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연봉 실수령액 계산기 | 생활 속 계산기</title>
+    <meta
+      name="description"
+      content="세전 연봉 기준 월 실수령액과 연 실수령액을 빠르게 계산하는 무료 연봉 실수령액 계산기. 부양가족과 비과세 금액까지 반영할 수 있습니다."
+    />
+    <meta name="keywords" content="연봉 실수령액 계산기, 세후 월급 계산기, 연봉 계산기, 연봉 3000 실수령액, 연봉 5000 실수령액" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="연봉 실수령액 계산기 | 생활 속 계산기" />
+    <meta property="og:description" content="세전 연봉 기준 월 실수령액을 간단히 계산하세요." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://example.com/calculators/salary/" />
+    <link rel="canonical" href="https://example.com/calculators/salary/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/salary.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="salary">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../../notices/">공지사항</a>
+            <a href="../loan/">대출</a>
+            <a href="../date/">날짜</a>
+            <a href="../bmi/">BMI</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero">
+        <div class="crumbs"><a href="../../">홈</a> / 연봉 실수령액 계산기</div>
+        <p class="eyebrow">연봉 계산기</p>
+        <h1>연봉 실수령액 계산기</h1>
+        <p class="article-lead">
+          세전 연봉과 비과세 금액, 부양가족 수를 넣으면 월 실수령액을 계산할 수 있습니다.
+        </p>
+        <div class="hero-actions">
+          <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+          <a class="primary-btn home-primary-btn" href="../../">홈으로 이동</a>
+        </div>
+      </header>
+
+      <main class="section article-grid">
+        <article class="article-card">
+          <h2>실수령액 바로 계산</h2>
+          <form class="form-grid">
+            <label>
+              세전 연봉
+              <div class="input-with-unit">
+                <input type="text" id="salaryAnnual" inputmode="numeric" maxlength="13" value="4,200" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+            <label>
+              <span class="label-with-help">
+                <span>비과세 월 금액</span>
+                <span class="help-tooltip">
+                  <button
+                    class="help-trigger"
+                    type="button"
+                    aria-label="비과세 월 금액 설명 보기"
+                  >
+                    !
+                  </button>
+                  <span class="help-bubble" role="tooltip">
+                    식대처럼 세금 계산에서 제외되는 월 단위 금액입니다.
+                  </span>
+                </span>
+              </span>
+              <div class="input-with-unit">
+                <input type="text" id="salaryFree" inputmode="numeric" maxlength="13" value="20" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+            <label>
+              부양가족 수
+              <input type="number" id="salaryDependents" min="1" max="10" step="1" value="1" />
+            </label>
+            <label>
+              자녀 수
+              <input type="number" id="salaryChildren" min="0" max="10" step="1" value="0" />
+            </label>
+          </form>
+          <div class="result-card" id="salaryResult"></div>
+
+          <h3>실제 금액과 차이가 날 수 있는 이유</h3>
+          <p>
+            회사별 공제 항목, 식대 같은 비과세 구성, 개인별 세액 조건이 다르기 때문에
+            실제 금액과 차이가 날 수 있습니다.
+          </p>
+
+          <div class="faq-list">
+            <details open>
+              <summary>연봉 실수령액은 실제 월급과 같나요?</summary>
+              <p>아니요. 실제 급여명세서의 공제 항목과 비과세 항목에 따라 달라질 수 있습니다.</p>
+            </details>
+            <details>
+              <summary>비과세 금액을 왜 입력하나요?</summary>
+              <p>과세 대상 금액이 줄어들 수 있어 실수령액 추정에 영향을 주기 때문입니다.</p>
+            </details>
+          </div>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card">
+            <p class="mini-label">관련 계산기</p>
+            <div class="related-grid">
+              <a class="related-card" href="../loan/">
+                <strong>대출 상환 계산기</strong>
+                <p>월 납입액과 총 이자를 함께 확인할 수 있습니다.</p>
+              </a>
+              <a class="related-card" href="../date/">
+                <strong>날짜 차이 계산기</strong>
+                <p>급여일, 계약일, 목표일까지 남은 기간을 계산할 수 있습니다.</p>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마진율 계산기 | 생활 속 계산기</title>
+    <meta name="description" content="판매가와 원가를 기준으로 마진액, 마진율, 마크업을 계산하는 무료 마진율 계산기입니다." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="마진율 계산기 | 생활 속 계산기" />
+    <meta property="og:description" content="판매가와 원가 기준 마진율을 빠르게 계산하세요." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://example.com/calculators/margin/" />
+    <link rel="canonical" href="https://example.com/calculators/margin/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/margin.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="margin">
+    <div class="page-shell">
+      <nav class="topbar"><a class="brand" href="../../">생활 속 계산기</a><div class="topbar-actions"><div class="topbar-links"><a href="../../">홈</a><a href="../../notices/">공지사항</a><a href="../vat/">부가세</a><a href="../breakeven/">손익분기점</a></div><button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button></div></nav>
+      <header class="calc-hero section salary-hero"><div class="crumbs"><a href="../../">홈</a> / 마진율 계산기</div><p class="eyebrow">사업 계산기</p><h1>마진율 계산기</h1><p class="article-lead">판매가와 원가를 입력하면 마진액과 마진율을 바로 확인할 수 있습니다.</p><div class="hero-actions"><button class="ghost-btn" id="shareButton" type="button">링크 복사</button><a class="primary-btn home-primary-btn" href="../../">홈으로 이동</a></div></header>
+      <main class="section article-grid"><article class="article-card"><h2>마진율 계산</h2><form class="form-grid"><label>판매가<input type="number" id="marginPrice" min="0" max="1000000000" step="1" value="50000" /></label><label>원가<input type="number" id="marginCost" min="0" max="1000000000" step="1" value="32000" /></label></form><div class="result-card" id="marginResult"></div></article><aside class="sidebar-stack"><div class="mini-card"><p class="mini-label">관련 계산기</p><div class="related-grid"><a class="related-card" href="../breakeven/"><strong>손익분기점 계산기</strong><p>몇 개를 팔아야 손익분기점을 넘는지 계산합니다.</p></a><a class="related-card" href="../settlement/"><strong>정산 계산기</strong><p>수수료와 비용을 제외한 정산액을 계산합니다.</p></a></div></div></aside></main>
+    </div>
+  </body>
+</html>

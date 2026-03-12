@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>중고거래 순수익 계산기 | 생활 속 계산기</title>
+    <meta name="description" content="판매가, 수수료, 택배비를 반영해 실제 순수익을 계산하는 무료 중고거래 순수익 계산기입니다." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="중고거래 순수익 계산기 | 생활 속 계산기" />
+    <meta property="og:description" content="판매 수수료와 비용을 반영한 실제 순수익을 확인하세요." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://example.com/calculators/used/" />
+    <link rel="canonical" href="https://example.com/calculators/used/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/used.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="used">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../freelance/">프리랜서</a>
+            <a href="../discount/">할인율</a>
+            <a href="../vat/">부가세</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero">
+        <div class="crumbs"><a href="../../">홈</a> / 중고거래 순수익 계산기</div>
+        <p class="eyebrow">거래 계산기</p>
+        <h1>중고거래 순수익 계산기</h1>
+        <p class="article-lead">판매가에서 수수료와 택배비, 기타 비용을 뺀 실제 순수익을 계산할 수 있습니다.</p>
+        <div class="hero-actions">
+          <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+          <a class="primary-btn home-primary-btn" href="../../">홈으로 이동</a>
+        </div>
+      </header>
+
+      <main class="section article-grid">
+        <article class="article-card">
+          <h2>순수익 계산</h2>
+          <form class="form-grid">
+            <label>
+              판매가
+              <input type="number" id="usedSalePrice" min="0" max="1000000000" step="1" value="85000" />
+            </label>
+            <label>
+              택배비
+              <input type="number" id="usedShipping" min="0" max="1000000000" step="1" value="3500" />
+            </label>
+            <label>
+              플랫폼 수수료(%)
+              <input type="number" id="usedFeeRate" min="0" max="100" step="0.1" value="3.5" />
+            </label>
+            <label>
+              기타 비용
+              <input type="number" id="usedExtraCost" min="0" max="1000000000" step="1" value="1000" />
+            </label>
+          </form>
+          <div class="result-card" id="usedResult"></div>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card">
+            <p class="mini-label">관련 계산기</p>
+            <div class="related-grid">
+              <a class="related-card" href="../discount/">
+                <strong>할인율 계산기</strong>
+                <p>정가와 할인율 기준 금액을 계산합니다.</p>
+              </a>
+              <a class="related-card" href="../freelance/">
+                <strong>프리랜서 단가 계산기</strong>
+                <p>목표 수입 기준 단가를 계산합니다.</p>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
