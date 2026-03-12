@@ -14,7 +14,6 @@
     <script defer src="../js/common.js"></script>
     <script defer src="../js/site-pages.js"></script>
     <script defer src="../theme.js"></script>
-    <script defer src="../js/contact.js"></script>
   </head>
   <body class="calc-page">
     <div class="page-shell">
@@ -35,32 +34,17 @@
           <article class="article-card legal-copy">
             <div class="crumbs"><a href="../">홈</a> / 문의하기</div>
             <h1>문의하기</h1>
-            <p>오류 제보, 개선 제안, 계산기 문의를 남길 수 있습니다.</p>
+            <p>문의와 버그 제보는 아래 메일 주소로 보내주시면 됩니다.</p>
             <div class="status-chip">문의 접수 페이지</div>
-            <form class="contact-form" id="contactForm" novalidate>
-              <label>
-                이름
-                <input type="text" id="contactName" name="name" placeholder="이름을 입력하세요" required />
-              </label>
-              <label>
-                이메일
-                <input type="email" id="contactEmail" name="email" placeholder="답변 받을 이메일을 입력하세요" required />
-              </label>
-              <label>
-                문의 내용
-                <textarea id="contactMessage" name="message" placeholder="오류 제보나 개선 의견을 남겨 주세요" required></textarea>
-              </label>
+            <div class="mini-card">
+              <strong>contact@calc.underlab.work</strong>
+              <p>계산기 문의, 버그 제보, 계산기 추가 요청, 이용 문의를 받을 수 있습니다.</p>
               <div class="contact-actions">
-                <button class="secondary-btn" type="submit">문의 보내기</button>
-                <button class="ghost-btn" id="contactReset" type="button">입력 초기화</button>
+                <a class="secondary-btn" href="mailto:contact@calc.underlab.work">메일 보내기</a>
               </div>
-              <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
-            </form>
+            </div>
           </article>
           <aside class="sidebar-stack">
-            <div class="surface-note">
-              현재 작성 중인 내용은 브라우저를 닫게 되면 지워집니다.
-            </div>
             <div class="mini-card">
               <p class="mini-label">문의 안내</p>
               <strong>접수 가능한 내용</strong>
@@ -83,19 +67,16 @@
           </div>
           <div class="faq-list">
             <details open>
-              <summary>작성 중인 내용은 저장되나요?</summary>
-              <p>현재 창이 열려 있는 동안만 저장되며, 브라우저를 닫으면 지워집니다.</p>
+              <summary>어떤 내용을 보내면 되나요?</summary>
+              <p>계산 결과 문의, 버그 제보, 계산기 추가 요청, 이용 문의를 보내주시면 됩니다.</p>
             </details>
             <details>
               <summary>답변을 받으려면 무엇을 적어야 하나요?</summary>
-              <p>
-                이메일을 함께 입력하면 추후 답변을 받을 수 있습니다.<br />
-                이메일은 사이트에 저장하지 않습니다.
-              </p>
+              <p>답변이 필요하면 회신 받을 이메일 주소를 함께 적어 보내주시면 됩니다.</p>
             </details>
             <details>
               <summary>문의 내용은 어떻게 전달되나요?</summary>
-              <p>입력한 내용은 사이트에서 바로 전송되며, 문의용 메일 주소로 전달됩니다.</p>
+              <p>문의는 메일 주소로 직접 전달되며, 사이트 안에서 별도 저장하지 않습니다.</p>
             </details>
           </div>
         </section>
