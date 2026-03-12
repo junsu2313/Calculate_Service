@@ -1,6 +1,6 @@
 ﻿(function () {
   window.LifeCalcSitePages = {
-    siteUrlPlaceholder: "https://example.com",
+    siteUrlPlaceholder: "https://calc.underlab.work",
     pages: [
       "/",
       "/calculators/",
