@@ -1311,13 +1311,28 @@ details p {
 
   .topbar {
     flex-direction: column;
-    align-items: start;
+    align-items: stretch;
   }
 
   .topbar-actions {
     width: 100%;
-    align-items: start;
+    align-items: stretch;
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .topbar-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  .topbar-links a,
+  .theme-toggle {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .hero-copy,
