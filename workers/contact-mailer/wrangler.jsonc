@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "calc-contact-mailer",
+  "main": "src/index.js",
+  "compatibility_date": "2026-03-13",
+  "send_email": [
+    {
+      "name": "CONTACT_DELIVERY",
+      "destination_address": "junsu9080@gmail.com"
+    }
+  ]
+}
