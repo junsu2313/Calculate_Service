@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Hub Admin</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/admin.css" />
+    <script defer src="/theme.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body class="calc-page admin-hub-page">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="/">Web Hub Admin</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="#overview">개요</a>
+            <a href="#publish">공지 발행</a>
+            <a href="/commits">커밋/배포</a>
+            <a href="#recent">최근 공지</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero admin-hero" id="overview">
+        <div class="crumbs">localhost / Web Hub Admin</div>
+        <h1>Web Hub Admin</h1>
+        <p class="article-lead">저장소별 공지와 기능 배포 흐름을 로컬에서 정리하는 기본 관리자 화면입니다.</p>
+      </header>
+
+      <main class="section admin-layout">
+        <section class="admin-main-stack">
+          <article class="article-card admin-card">
+            <div class="admin-card-head">
+              <div>
+                <p class="mini-label">운영 서비스</p>
+                <h2>서비스 현황</h2>
+              </div>
+              <span class="status-chip" id="healthStatus">로컬 확인 중</span>
+            </div>
+            <div class="admin-service-grid" id="serviceGrid"></div>
+          </article>
+
+          <article class="article-card admin-card" id="publish">
+            <div class="admin-card-head">
+              <div>
+                <p class="mini-label">calc 공지</p>
+                <h2>생활 속 계산기 공지 작성</h2>
+              </div>
+              <span class="admin-note">공지 데이터는 <code>calc</code> 저장소의 <code>data/notices.json</code>에 반영됩니다.</span>
+            </div>
+
+            <form class="contact-form admin-form" id="adminNoticeForm">
+              <div class="form-grid">
+                <label>
+                  구분
+                  <select id="noticeCategory">
+                    <option value="업데이트">업데이트</option>
+                    <option value="운영 안내">운영 안내</option>
+                    <option value="안내">안내</option>
+                    <option value="점검">점검</option>
+                  </select>
+                </label>
+                <label>
+                  목록 제목
+                  <input type="text" id="noticeShortTitle" maxlength="12" placeholder="예: 계산기 추가" />
+                </label>
+              </div>
+              <label>
+                공지 제목
+                <input type="text" id="noticeTitle" maxlength="80" placeholder="예: 새로운 계산기를 추가했습니다." />
+              </label>
+              <label>
+                공지 내용
+                <textarea id="noticeBody" placeholder="공지 내용을 입력해 주세요."></textarea>
+              </label>
+              <div class="contact-actions">
+                <button class="primary-btn home-primary-btn" type="submit">공지 반영</button>
+                <button class="ghost-btn" id="noticePublishAndPush" type="button">공지 반영 + 배포</button>
+                <button class="ghost-btn" id="adminFormReset" type="button">입력 초기화</button>
+              </div>
+              <p class="form-feedback" id="adminFeedback" aria-live="polite"></p>
+            </form>
+          </article>
+        </section>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card admin-card">
+            <p class="mini-label">운영 기준</p>
+            <ul>
+              <li>이 화면은 <code>127.0.0.1:4174</code>에서만 사용합니다.</li>
+              <li><code>calc</code>와 <code>hub</code>는 서로 다른 저장소로 분리해 다룹니다.</li>
+              <li>기능 배포와 허브 배포는 별도 <code>커밋/배포</code> 페이지에서 진행합니다.</li>
+            </ul>
+          </div>
+          <div class="mini-card admin-card" id="recent">
+            <div class="admin-card-head compact">
+              <div>
+                <p class="mini-label">최근 공지</p>
+                <h3>최근 반영 내역</h3>
+              </div>
+            </div>
+            <div class="admin-notice-list" id="noticeList"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>커밋/배포 | Web Hub Admin</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/admin.css" />
+    <script defer src="/theme.js"></script>
+    <script defer src="/commits.js"></script>
+  </head>
+  <body class="calc-page admin-hub-page">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="/">Web Hub Admin</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="/">개요</a>
+            <a href="/#publish">공지 발행</a>
+            <a href="/commits">커밋/배포</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero admin-hero">
+        <div class="crumbs">localhost / Web Hub Admin / 커밋/배포</div>
+        <h1>커밋/배포</h1>
+        <p class="article-lead">저장소와 배포 구분을 고르고, 메시지를 직접 쓰거나 자동 생성 메시지로 바로 푸시할 수 있습니다.</p>
+      </header>
+
+      <main class="section admin-layout commit-layout">
+        <section class="admin-main-stack">
+          <article class="article-card admin-card">
+            <div class="admin-card-head">
+              <div>
+                <p class="mini-label">수동 배포</p>
+                <h2>저장소별 배포</h2>
+              </div>
+              <span class="status-chip" id="gitStatusChip">Git 상태 확인 중</span>
+            </div>
+
+            <form class="contact-form admin-form" id="gitPublishForm">
+              <div class="form-grid">
+                <label>
+                  대상 저장소
+                  <select id="gitRepoSelect">
+                    <option value="calc">생활 속 계산기</option>
+                    <option value="hub">웹 허브</option>
+                  </select>
+                </label>
+                <label>
+                  배포 구분
+                  <select id="gitKindSelect">
+                    <option value="notice">공지</option>
+                    <option value="feature">기능</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                커밋 메시지
+                <input type="text" id="gitCommitMessage" maxlength="120" placeholder="예: 메인 화면 문구 수정" />
+              </label>
+              <p class="section-caption">비워두면 <code>저장소-구분-YYYY-MM-DD-HH-mm</code> 형식으로 자동 생성됩니다.</p>
+              <div class="contact-actions">
+                <button class="primary-btn home-primary-btn" type="submit">커밋 후 배포</button>
+                <button class="ghost-btn" id="gitRefreshStatus" type="button">상태 새로고침</button>
+              </div>
+              <p class="form-feedback" id="gitFeedback" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="article-card admin-card">
+            <div class="admin-card-head compact">
+              <div>
+                <p class="mini-label">현재 상태</p>
+                <h3>저장소별 Git 상태</h3>
+              </div>
+            </div>
+            <div class="admin-repo-status-grid" id="repoStatusGrid"></div>
+          </article>
+        </section>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card admin-card">
+            <p class="mini-label">빠른 규칙</p>
+            <ul>
+              <li><code>calc</code>는 계산기 서비스 저장소만 커밋하고 푸시합니다.</li>
+              <li><code>hub</code>는 웹 허브 저장소만 커밋하고 푸시합니다.</li>
+              <li>공지와 기능은 메시지 분류와 운영 기준을 나누기 위한 구분입니다.</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

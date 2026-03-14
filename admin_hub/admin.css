@@ -1,0 +1,247 @@
+﻿.admin-hub-page .page-shell {
+  padding-bottom: 32px;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) 320px;
+  gap: 20px;
+}
+
+.admin-main-stack {
+  display: grid;
+  gap: 20px;
+}
+
+.admin-card {
+  box-shadow: 0 14px 34px rgba(17, 17, 17, 0.06);
+}
+
+.admin-hero h1 {
+  max-width: none;
+}
+
+.admin-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-card-head.compact {
+  margin-bottom: 14px;
+}
+
+.admin-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.admin-service-grid,
+.admin-notice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-service-card,
+.admin-notice-item {
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+}
+
+:root[data-theme="dark"] .admin-service-card,
+:root[data-theme="dark"] .admin-notice-item {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-service-card {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-service-top,
+.admin-notice-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-service-card strong,
+.admin-notice-item strong {
+  font-size: 1rem;
+}
+
+.admin-service-card p,
+.admin-notice-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.admin-service-meta,
+.admin-notice-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.admin-git-summary {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(17, 17, 17, 0.06);
+}
+
+:root[data-theme="dark"] .admin-git-summary {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.admin-git-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-git-line.stacked {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.admin-git-line span {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.admin-git-line strong {
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.admin-git-detail {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-git-detail summary {
+  width: fit-content;
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.admin-git-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+:root[data-theme="dark"] .admin-git-detail summary {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-git-detail-body {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+:root[data-theme="dark"] .admin-git-detail-body {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.admin-git-pending-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.admin-git-pending-list li {
+  line-height: 1.6;
+}
+
+.admin-form {
+  gap: 16px;
+}
+
+.admin-form textarea {
+  min-height: 160px;
+}
+
+@media (max-width: 960px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.commit-layout .admin-main-stack {
+  gap: 20px;
+}
+
+.admin-status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-status-item {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+}
+
+:root[data-theme="dark"] .admin-status-item {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-status-item span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.admin-pending-block {
+  margin-top: 18px;
+}
+
+.admin-notice-item.compact {
+  padding: 14px 16px;
+}
+
+@media (max-width: 720px) {
+  .admin-status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-git-line {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.admin-repo-status-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-repo-card {
+  padding: 22px;
+}
