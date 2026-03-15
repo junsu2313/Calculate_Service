@@ -11,6 +11,7 @@
       "/calculators/search/",
       "/notices/",
       "/calculators/salary/",
+      "/calculators/salary-slip/",
       "/calculators/loan/",
       "/calculators/date/",
       "/calculators/bmi/",

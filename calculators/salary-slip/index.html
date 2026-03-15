@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연봉 급여명세서 미리보기 | 생활 속 계산기</title>
+    <meta
+      name="description"
+      content="연봉, 비과세 금액, 지급 개월 수, 상여를 기준으로 일반 지급월과 상여 포함월 급여명세서를 미리 보는 실전형 연봉 계산기입니다."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="연봉 급여명세서 미리보기 | 생활 속 계산기" />
+    <meta
+      property="og:description"
+      content="일반 지급월, 상여 포함월, 공제 항목별 내역까지 나눠서 보는 실전형 연봉 명세서 미리보기."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://calc.underlab.work/calculators/salary-slip/" />
+    <link rel="canonical" href="https://calc.underlab.work/calculators/salary-slip/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/salary-slip.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="salary-slip">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../salary/">기본 연봉 계산기</a>
+            <a href="../../notices/">공지사항</a>
+            <a href="../loan/">대출</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero">
+        <div class="crumbs"><a href="../../">홈</a> / <a href="../salary/">연봉 실수령액 계산기</a> / 급여명세서 미리보기</div>
+        <p class="eyebrow">연봉 프리미엄 보기</p>
+        <h1>연봉 급여명세서 미리보기</h1>
+        <p class="article-lead">
+          일반 지급월과 상여 포함월을 나눠서 보고, 공제 항목별 내역을 실제 급여명세서처럼 미리 확인합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="ghost-btn" href="../salary/">기본 연봉 계산기로 돌아가기</a>
+          <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+        </div>
+      </header>
+
+      <main class="section article-grid">
+        <article class="article-card">
+          <h2>실전형 명세서 계산</h2>
+          <form class="form-grid">
+            <label>
+              세전 연봉
+              <div class="input-with-unit">
+                <input type="text" id="salaryAnnual" inputmode="numeric" maxlength="13" value="4,200" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+            <label>
+              비과세 월 금액
+              <div class="input-with-unit">
+                <input type="text" id="salaryFree" inputmode="numeric" maxlength="13" value="20" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+            <label>
+              부양가족 수
+              <input type="number" id="salaryDependents" min="1" max="10" step="1" value="1" />
+            </label>
+            <label>
+              자녀 수
+              <input type="number" id="salaryChildren" min="0" max="10" step="1" value="0" />
+            </label>
+            <label>
+              급여 분할 개월 수
+              <select id="salaryPayMonths">
+                <option value="12" selected>12개월</option>
+                <option value="13">13개월</option>
+                <option value="14">14개월</option>
+                <option value="16">16개월</option>
+              </select>
+            </label>
+            <label>
+              연간 상여·성과급
+              <div class="input-with-unit">
+                <input type="text" id="salaryBonusAnnual" inputmode="numeric" maxlength="13" value="0" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+          </form>
+
+          <div class="premium-insight-card">
+            <div class="premium-insight-head">
+              <div>
+                <p class="mini-label">Premium</p>
+                <h3>리얼리스틱 명세서 결과</h3>
+              </div>
+              <span class="status-chip premium-chip">실전형 보기</span>
+            </div>
+            <p class="premium-insight-copy">
+              상여는 1회 지급, 급여는 선택한 개월 수로 나눠 지급한다고 가정한 미리보기입니다.
+            </p>
+            <div class="premium-payslip" id="salaryPayslipResult"></div>
+          </div>
+
+          <div class="surface-note">
+            실제 급여명세서와 다를 수 있는 항목:
+            회사별 복지수당, 식대 처리 기준, 반올림 방식, 연말정산 전후 차이, 상여 지급 시점
+          </div>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card">
+            <p class="mini-label">같이 보기</p>
+            <div class="related-grid">
+              <a class="related-card" href="../salary/">
+                <strong>기본 연봉 계산기</strong>
+                <p>입력 항목을 줄이고 빠르게 실수령액만 확인합니다.</p>
+              </a>
+              <a class="related-card" href="../freelance/">
+                <strong>프리랜서 단가 계산기</strong>
+                <p>고정 수입이 아닌 목표 수입 기준의 단가를 계산합니다.</p>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
