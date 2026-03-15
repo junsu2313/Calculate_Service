@@ -6,9 +6,11 @@
     const unitPrice = document.getElementById("breakevenUnitPrice");
     const variableCost = document.getElementById("breakevenVariableCost");
     const expectedUnits = document.getElementById("breakevenExpectedUnits");
-    const result = document.getElementById("breakevenDetailResult");
+    const summary = document.getElementById("breakevenDetailSummary");
+    const graph = document.getElementById("breakevenGraph");
+    const breakdown = document.getElementById("breakevenDetailBreakdown");
 
-    if (!fixedCost || !unitPrice || !variableCost || !expectedUnits || !result) {
+    if (!fixedCost || !unitPrice || !variableCost || !expectedUnits || !summary || !graph || !breakdown) {
       return;
     }
 
@@ -25,13 +27,10 @@
       const expectedProfit = expectedRevenue - expectedCost;
 
       if (contribution <= 0) {
-        result.innerHTML = `
-          <div class="premium-breakdown-grid">
-            <article class="premium-breakdown-card">
-              <h4>계산 안내</h4>
-              <p class="premium-insight-copy">판매가가 단위당 변동비보다 커야 손익분기점을 계산할 수 있습니다.</p>
-            </article>
-          </div>
+        summary.innerHTML = "";
+        graph.innerHTML = "";
+        breakdown.innerHTML = `
+          <p class="premium-insight-copy">판매가가 단위당 변동비보다 커야 손익분기점을 계산할 수 있습니다.</p>
         `;
         return;
       }
@@ -43,50 +42,44 @@
         fixedCostValue + graphMaxUnits * variableCostValue
       );
 
-      result.innerHTML = `
-        <div class="premium-payslip-grid">
-          <article class="premium-payslip-summary">
-            <span>손익분기점 수량</span>
-            <strong>${formatNumber(breakevenUnits)}개</strong>
-            <p>이 수량부터 매출이 총비용을 따라잡기 시작합니다.</p>
-          </article>
-          <article class="premium-payslip-summary">
-            <span>손익분기점 매출</span>
-            <strong>${formatWon(breakevenSales)}</strong>
-            <p>손익분기점 수량에 도달했을 때의 예상 매출입니다.</p>
-          </article>
-          <article class="premium-payslip-summary">
-            <span>예상 판매 수량 기준 손익</span>
-            <strong>${formatWon(expectedProfit)}</strong>
-            <p>${expectedProfit >= 0 ? "손익분기점을 넘는 흑자 구간입니다." : "아직 손익분기점 전 구간입니다."}</p>
-          </article>
-        </div>
-        <div class="premium-breakdown-grid">
-          <article class="premium-breakdown-card premium-graph-card breakeven-graph-card-wide">
-            <h4>손익분기점 그래프</h4>
-            ${renderGraph({
-              maxUnits: graphMaxUnits,
-              maxAmount: graphMaxAmount,
-              fixedCost: fixedCostValue,
-              unitPrice: unitPriceValue,
-              variableCost: variableCostValue,
-              breakevenUnits,
-              breakevenSales,
-              expectedUnits: expectedUnitsValue,
-            })}
-          </article>
-          <article class="premium-breakdown-card">
-            <h4>예상 수량 기준 비교</h4>
-            <dl class="premium-breakdown-list">
-              <div><dt>예상 판매 수량</dt><dd>${formatNumber(expectedUnitsValue)}개</dd></div>
-              <div><dt>예상 매출</dt><dd>${formatWon(expectedRevenue)}</dd></div>
-              <div><dt>예상 총비용</dt><dd>${formatWon(expectedCost)}</dd></div>
-              <div><dt>월 고정비</dt><dd>${formatWon(fixedCostValue)}</dd></div>
-              <div><dt>단위당 공헌이익</dt><dd>${formatWon(contribution)}</dd></div>
-              <div><dt>손익분기점까지 차이</dt><dd>${formatNumber(Math.max(breakevenUnits - expectedUnitsValue, 0))}개</dd></div>
-            </dl>
-          </article>
-        </div>
+      summary.innerHTML = `
+        <article class="premium-payslip-summary">
+          <span>손익분기점 수량</span>
+          <strong>${formatNumber(breakevenUnits)}개</strong>
+          <p>이 수량부터 매출이 총비용을 따라잡기 시작합니다.</p>
+        </article>
+        <article class="premium-payslip-summary">
+          <span>손익분기점 매출</span>
+          <strong>${formatWon(breakevenSales)}</strong>
+          <p>손익분기점 수량에 도달했을 때의 예상 매출입니다.</p>
+        </article>
+        <article class="premium-payslip-summary">
+          <span>예상 판매 수량 기준 손익</span>
+          <strong>${formatWon(expectedProfit)}</strong>
+          <p>${expectedProfit >= 0 ? "손익분기점을 넘는 흑자 구간입니다." : "아직 손익분기점 전 구간입니다."}</p>
+        </article>
+      `;
+
+      graph.innerHTML = renderGraph({
+        maxUnits: graphMaxUnits,
+        maxAmount: graphMaxAmount,
+        fixedCost: fixedCostValue,
+        unitPrice: unitPriceValue,
+        variableCost: variableCostValue,
+        breakevenUnits,
+        breakevenSales,
+        expectedUnits: expectedUnitsValue,
+      });
+
+      breakdown.innerHTML = `
+        <dl class="premium-breakdown-list">
+          <div><dt>예상 판매 수량</dt><dd>${formatNumber(expectedUnitsValue)}개</dd></div>
+          <div><dt>예상 매출</dt><dd>${formatWon(expectedRevenue)}</dd></div>
+          <div><dt>예상 총비용</dt><dd>${formatWon(expectedCost)}</dd></div>
+          <div><dt>월 고정비</dt><dd>${formatWon(fixedCostValue)}</dd></div>
+          <div><dt>단위당 공헌이익</dt><dd>${formatWon(contribution)}</dd></div>
+          <div><dt>손익분기점까지 차이</dt><dd>${formatNumber(Math.max(breakevenUnits - expectedUnitsValue, 0))}개</dd></div>
+        </dl>
       `;
     };
 

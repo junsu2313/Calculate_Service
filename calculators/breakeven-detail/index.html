@@ -86,7 +86,19 @@
             <p class="premium-insight-copy">
               매출선이 총비용선을 넘는 지점을 손익분기점으로 보고, 예상 판매 수량이 그보다 앞인지 뒤인지 함께 확인합니다.
             </p>
-            <div class="premium-payslip" id="breakevenDetailResult"></div>
+            <div class="premium-payslip">
+              <div class="premium-payslip-grid" id="breakevenDetailSummary"></div>
+              <div class="premium-breakdown-grid">
+                <article class="premium-breakdown-card premium-graph-card breakeven-graph-card-wide">
+                  <h4>손익분기점 그래프</h4>
+                  <div id="breakevenGraph"></div>
+                </article>
+                <article class="premium-breakdown-card">
+                  <h4>예상 수량 기준 비교</h4>
+                  <div id="breakevenDetailBreakdown"></div>
+                </article>
+              </div>
+            </div>
           </div>
 
           <details class="surface-note" open>
