@@ -14,6 +14,7 @@
     const dependents = document.getElementById("salaryDependents");
     const children = document.getElementById("salaryChildren");
     const result = document.getElementById("salaryResult");
+    const params = new URLSearchParams(window.location.search);
 
     const render = () => {
       const annualValue = parseManwonInput(annual.value);
@@ -55,11 +56,44 @@
       render();
     });
 
+    applyPresetFromQuery(params, annual, taxFree, dependents, children);
     annual.value = formatManwonInput(annual.value);
     taxFree.value = formatManwonInput(taxFree.value);
     dependents.value = String(clampNumber(dependents.value, 1, constants.MAX_DEPENDENTS, 1));
     children.value = String(clampNumber(children.value, 0, constants.MAX_CHILDREN, 0));
     render();
+  }
+
+  function applyPresetFromQuery(params, annual, taxFree, dependents, children) {
+    const annualPreset = readPositiveInteger(params.get("annual"));
+    const taxFreePreset = readPositiveInteger(params.get("free"));
+    const dependentPreset = readPositiveInteger(params.get("dependents"));
+    const childPreset = readPositiveInteger(params.get("children"));
+
+    if (annualPreset !== null) {
+      annual.value = String(annualPreset);
+    }
+
+    if (taxFreePreset !== null) {
+      taxFree.value = String(taxFreePreset);
+    }
+
+    if (dependentPreset !== null) {
+      dependents.value = String(dependentPreset);
+    }
+
+    if (childPreset !== null) {
+      children.value = String(childPreset);
+    }
+  }
+
+  function readPositiveInteger(value) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric) || numeric < 0) {
+      return null;
+    }
+
+    return Math.round(numeric);
   }
 
   function getDeductionBreakdown(taxableMonthly, dependentValue, childValue) {
