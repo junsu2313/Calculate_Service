@@ -95,6 +95,41 @@
           </form>
           <div class="result-card" id="salaryResult"></div>
 
+          <section class="premium-insight-card">
+            <div class="premium-insight-head">
+              <div>
+                <p class="mini-label">Premium</p>
+                <h3>리얼리스틱 명세서 미리보기</h3>
+              </div>
+              <span class="status-chip premium-chip">실전형 보기</span>
+            </div>
+            <p class="premium-insight-copy">
+              기본 실수령액 계산 아래에, 실제 급여명세서처럼 일반 지급월과 상여 포함월을 나눠서 미리 봅니다.
+            </p>
+            <div class="form-grid premium-grid">
+              <label>
+                급여 분할 개월 수
+                <select id="salaryPayMonths">
+                  <option value="12" selected>12개월</option>
+                  <option value="13">13개월</option>
+                  <option value="14">14개월</option>
+                  <option value="16">16개월</option>
+                </select>
+              </label>
+              <label>
+                연간 상여·성과급
+                <div class="input-with-unit">
+                  <input type="text" id="salaryBonusAnnual" inputmode="numeric" maxlength="13" value="0" />
+                  <span class="input-unit">만원</span>
+                </div>
+              </label>
+            </div>
+            <div class="premium-payslip" id="salaryPayslipResult"></div>
+            <p class="section-caption premium-caption">
+              상여는 1회 지급으로 가정한 미리보기입니다. 회사별 비과세 규정, 복지 항목, 반올림 방식은 반영하지 않습니다.
+            </p>
+          </section>
+
           <h3>실제 금액과 차이가 날 수 있는 이유</h3>
           <p>
             회사별 공제 항목, 식대 같은 비과세 구성, 개인별 세액 조건이 다르기 때문에
