@@ -1857,10 +1857,11 @@ details p {
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
 .calendar-lunar-day {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.68);
   font-size: 0.86rem;
   line-height: 1.45;
 }
