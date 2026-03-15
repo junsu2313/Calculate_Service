@@ -20,6 +20,7 @@
       "/calculators/percent/",
       "/calculators/discount/",
       "/calculators/freelance/",
+      "/calculators/freelance-detail/",
       "/calculators/vat/",
       "/calculators/margin/",
       "/calculators/breakeven/",
