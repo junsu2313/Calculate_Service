@@ -44,6 +44,7 @@
       const relation =
         diffDays === 0 ? "오늘 기준 같은 날" : diffDays > 0 ? `오늘로부터 ${formatNumber(diffDays)}일 후` : `오늘보다 ${formatNumber(Math.abs(diffDays))}일 전`;
       const termGuide = getDateTermGuide(diffDays);
+      const termGuideHtml = termGuide ? `<p>${termGuide}</p>` : "";
 
       summary.innerHTML = `
         <div class="premium-payslip-grid">
@@ -55,7 +56,7 @@
           <article class="premium-payslip-summary">
             <span>오늘 기준</span>
             <strong>${relation}</strong>
-            <p>${termGuide}</p>
+            ${termGuideHtml}
           </article>
         </div>
       `;
@@ -153,7 +154,7 @@
     if (diffDays === -1) {
       return "이 날짜는 작일 또는 전일이라고도 표현합니다.";
     }
-    return "이 날짜를 딱 가리키는 짧은 한자어 표현은 보통 쓰지 않으므로 숫자로 풀어 쓰는 편이 더 자연스럽습니다.";
+    return "";
   }
 
   function isSameDate(left, right) {
