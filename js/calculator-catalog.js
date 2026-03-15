@@ -12,6 +12,18 @@
       href: "/calculators/loan/",
       kicker: "금융 계산",
     },
+    savings: {
+      title: "적금 계산기",
+      description: "월 납입 기준 적금 만기금액과 세후 이자를 계산합니다.",
+      href: "/calculators/savings/",
+      kicker: "금융 계산",
+    },
+    deposit: {
+      title: "예금 계산기",
+      description: "예치금 기준 예금 만기금액과 세후 이자를 계산합니다.",
+      href: "/calculators/deposit/",
+      kicker: "금융 계산",
+    },
     date: {
       title: "날짜 차이 계산기",
       description: "두 날짜 사이 차이를 확인합니다.",
