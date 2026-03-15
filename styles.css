@@ -1295,6 +1295,10 @@ details p {
   border: 1px solid var(--line);
 }
 
+.surface-note .faq-list article p {
+  text-indent: 1em;
+}
+
 :root[data-theme="dark"] .surface-note .faq-list article {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.08);
