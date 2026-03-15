@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대출 상세 계산 | 생활 속 계산기</title>
+    <meta
+      name="description"
+      content="대출 원금, 금리, 기간, 거치기간, 중도상환 금액을 반영해 실제에 더 가까운 월별 상환 흐름을 보는 대출 상세 계산기입니다."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="대출 상세 계산 | 생활 속 계산기" />
+    <meta
+      property="og:description"
+      content="거치기간과 중도상환까지 반영한 월별 상환 흐름을 자세히 확인해 보세요."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://calc.underlab.work/calculators/loan-detail/" />
+    <link rel="canonical" href="https://calc.underlab.work/calculators/loan-detail/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529176175465863" crossorigin="anonymous"></script>
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/loan-detail.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="loan-detail">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../loan/">기본 대출 계산기</a>
+            <a href="../../notices/">공지사항</a>
+            <a href="../salary/">연봉</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero">
+        <div class="crumbs"><a href="../../">홈</a> / <a href="../loan/">대출 상환 계산기</a> / 대출 상세 계산</div>
+        <p class="eyebrow">대출 상세 계산</p>
+        <h1>대출 상세 계산</h1>
+        <p class="article-lead">
+          거치기간과 중도상환까지 반영해서, 실제 대출 상환 흐름에 더 가까운 월별 부담을 확인할 수 있습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="ghost-btn" href="../loan/">기본 대출 계산기로 돌아가기</a>
+          <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+        </div>
+      </header>
+
+      <main class="section article-grid">
+        <article class="article-card">
+          <h2>상세 입력으로 계산</h2>
+          <form class="form-grid">
+            <label>
+              대출 원금
+              <div class="input-with-unit">
+                <input type="text" id="loanPrincipal" inputmode="numeric" maxlength="13" value="3,000" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+            <label>
+              연 이자율(%)
+              <input type="number" id="loanRate" min="0" max="100" step="0.1" value="4.5" />
+            </label>
+            <label>
+              상환 기간(개월)
+              <input type="number" id="loanMonths" min="1" max="600" step="1" value="36" />
+            </label>
+            <label>
+              상환 방식
+              <select id="loanType">
+                <option value="amortized">원리금균등</option>
+                <option value="equalPrincipal">원금균등</option>
+                <option value="bullet">만기일시상환</option>
+              </select>
+            </label>
+            <label>
+              거치기간(개월)
+              <input type="number" id="loanGraceMonths" min="0" max="120" step="1" value="0" />
+            </label>
+            <label>
+              중도상환 시점(개월)
+              <input type="number" id="loanPrepayMonth" min="0" max="600" step="1" value="0" />
+            </label>
+            <label>
+              중도상환 금액
+              <div class="input-with-unit">
+                <input type="text" id="loanPrepayAmount" inputmode="numeric" maxlength="13" value="0" />
+                <span class="input-unit">만원</span>
+              </div>
+            </label>
+          </form>
+
+          <div class="premium-insight-card">
+            <div class="premium-insight-head">
+              <div>
+                <p class="mini-label">상세 보기</p>
+                <h3>대출 상세 결과</h3>
+              </div>
+              <span class="status-chip premium-chip">월별 흐름</span>
+            </div>
+            <p class="premium-insight-copy">
+              거치기간은 이자만 내는 구간으로, 중도상환은 선택한 달의 일반 납입 뒤에 추가로 상환한다고 가정합니다.
+            </p>
+            <div class="premium-payslip" id="loanDetailResult"></div>
+          </div>
+
+          <details class="surface-note" open>
+            <summary>입력 항목이 결과에 영향을 주는 이유</summary>
+            <p>각 입력값이 월 납입액과 총 이자를 어떻게 바꾸는지 자세히 볼 수 있습니다.</p>
+            <div class="faq-list">
+              <article>
+                <strong>거치기간은 왜 중요한가요?</strong>
+                <p>거치기간에는 보통 원금을 바로 갚지 않고 이자만 내는 경우가 많습니다. 그래서 초반 월 납입액은 가벼워 보일 수 있지만, 원금을 갚는 기간이 짧아져 이후 월 부담은 더 커질 수 있습니다.</p>
+              </article>
+              <article>
+                <strong>중도상환 시점과 금액은 무엇을 바꾸나요?</strong>
+                <p>대출 도중 원금을 더 갚으면 남은 원금이 줄어듭니다. 그러면 이후 달에 붙는 이자도 줄어들기 때문에 총 이자가 내려가고, 경우에 따라 마지막 달 납입액도 달라집니다.</p>
+              </article>
+              <article>
+                <strong>상환 방식은 왜 계속 중요할까요?</strong>
+                <p>같은 원금과 금리라도 원리금균등, 원금균등, 만기일시상환은 돈이 빠져나가는 순서가 다릅니다. 그래서 첫 달 부담, 마지막 달 부담, 총 이자 규모가 모두 달라집니다.</p>
+              </article>
+            </div>
+          </details>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card">
+            <p class="mini-label">같이 보기</p>
+            <div class="related-grid">
+              <a class="related-card" href="../loan/">
+                <strong>기본 대출 계산기</strong>
+                <p>원금, 금리, 기간만으로 빠르게 월 납입액을 확인합니다.</p>
+              </a>
+              <a class="related-card" href="../salary/">
+                <strong>연봉 실수령액 계산기</strong>
+                <p>월 실수령액을 기준으로 대출 부담을 함께 볼 수 있습니다.</p>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

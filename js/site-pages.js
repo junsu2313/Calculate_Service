@@ -13,6 +13,7 @@
       "/calculators/salary/",
       "/calculators/salary-slip/",
       "/calculators/loan/",
+      "/calculators/loan-detail/",
       "/calculators/date/",
       "/calculators/bmi/",
       "/calculators/age/",
