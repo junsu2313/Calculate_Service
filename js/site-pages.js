@@ -15,6 +15,7 @@
       "/calculators/loan/",
       "/calculators/loan-detail/",
       "/calculators/date/",
+      "/calculators/date-calendar/",
       "/calculators/bmi/",
       "/calculators/age/",
       "/calculators/percent/",
