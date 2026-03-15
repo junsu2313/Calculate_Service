@@ -62,7 +62,7 @@
           </article>
         </div>
         <div class="premium-breakdown-grid">
-          <article class="premium-breakdown-card premium-graph-card">
+          <article class="premium-breakdown-card premium-graph-card breakeven-graph-card-wide">
             <h4>손익분기점 그래프</h4>
             ${renderGraph({
               maxUnits: graphMaxUnits,
@@ -127,7 +127,14 @@
 
     return `
       <div class="breakeven-graph">
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="손익분기점 그래프">
+        <svg
+          viewBox="0 0 ${width} ${height}"
+          role="img"
+          aria-label="손익분기점 그래프"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid meet"
+          shape-rendering="geometricPrecision"
+        >
           <line class="breakeven-axis" x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${height - padding.bottom}" />
           <line class="breakeven-axis" x1="${padding.left}" y1="${height - padding.bottom}" x2="${width - padding.right}" y2="${height - padding.bottom}" />
           <polyline class="breakeven-line fixed" points="${fixedCostLine.map((point) => point.join(",")).join(" ")}" />

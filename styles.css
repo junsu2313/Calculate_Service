@@ -1908,6 +1908,10 @@ details p {
   overflow: hidden;
 }
 
+.breakeven-graph-card-wide {
+  grid-column: 1 / -1;
+}
+
 .breakeven-graph {
   display: grid;
   gap: 14px;
@@ -1915,6 +1919,7 @@ details p {
 
 .breakeven-graph svg {
   width: 100%;
+  min-height: 320px;
   height: auto;
   display: block;
   border-radius: var(--radius-md);
