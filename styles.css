@@ -1264,8 +1264,10 @@ details p {
 .surface-note {
   padding: 18px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.62);
+  background: var(--surface);
   border: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
   color: var(--muted);
   line-height: 1.8;
   word-break: keep-all;
