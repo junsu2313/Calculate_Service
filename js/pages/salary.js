@@ -65,7 +65,7 @@
   }
 
   function applyPresetFromQuery(params, annual, taxFree, dependents, children) {
-    const annualPreset = readPositiveInteger(params.get("annual"));
+    const annualPreset = readAnnualPreset(params, window.location.search);
     const taxFreePreset = readPositiveInteger(params.get("free"));
     const dependentPreset = readPositiveInteger(params.get("dependents"));
     const childPreset = readPositiveInteger(params.get("children"));
@@ -85,6 +85,25 @@
     if (childPreset !== null) {
       children.value = String(childPreset);
     }
+  }
+
+  function readAnnualPreset(params, rawSearch) {
+    const namedPreset = readPositiveInteger(params.get("annual"));
+    if (namedPreset !== null) {
+      return namedPreset;
+    }
+
+    const compactSearch = String(rawSearch || "").replace(/^\?/, "").trim();
+    if (!compactSearch) {
+      return null;
+    }
+
+    const directPreset = compactSearch.replace(/^=/, "");
+    if (/^\d+$/.test(directPreset)) {
+      return readPositiveInteger(directPreset);
+    }
+
+    return null;
   }
 
   function readPositiveInteger(value) {
