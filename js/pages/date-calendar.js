@@ -1,8 +1,7 @@
 (function () {
-  const { formatDateInputValue, parseDateInput, formatNumber } = window.LifeCalcUtils;
+  const { formatNumber } = window.LifeCalcUtils;
 
   function initDateCalendarPage() {
-    const selectedInput = document.getElementById("calendarSelectedDate");
     const monthLabel = document.getElementById("calendarMonthLabel");
     const grid = document.getElementById("dateCalendarGrid");
     const summary = document.getElementById("dateCalendarSummary");
@@ -10,7 +9,7 @@
     const nextButton = document.getElementById("calendarNextMonth");
     const todayButton = document.getElementById("calendarToday");
 
-    if (!selectedInput || !monthLabel || !grid || !summary || !prevButton || !nextButton || !todayButton) {
+    if (!monthLabel || !grid || !summary || !prevButton || !nextButton || !todayButton) {
       return;
     }
 
@@ -35,7 +34,6 @@
     });
 
     const render = () => {
-      selectedInput.value = formatDateInputValue(selectedDate);
       monthLabel.textContent = solarMonthFormatter.format(currentMonth);
       renderSummary();
       renderCalendar();
@@ -62,7 +60,6 @@
           <article class="premium-payslip-summary">
             <span>오늘 기준</span>
             <strong>${relation}</strong>
-            <p>오늘과 비교했을 때 선택한 날짜가 앞인지 뒤인지 빠르게 확인할 수 있습니다.</p>
           </article>
         </div>
       `;
@@ -114,16 +111,6 @@
         });
       });
     };
-
-    selectedInput.addEventListener("input", () => {
-      const parsed = parseDateInput(selectedInput.value);
-      if (!parsed) {
-        return;
-      }
-      selectedDate = startOfDay(parsed);
-      currentMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
-      render();
-    });
 
     prevButton.addEventListener("click", () => {
       currentMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1);
