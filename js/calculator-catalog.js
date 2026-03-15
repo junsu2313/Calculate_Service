@@ -40,7 +40,7 @@
       title: "할인율 계산기",
       description: "정가와 할인율 기준 최종 금액을 확인합니다.",
       href: "/calculators/discount/",
-      kicker: "쇼핑 계산",
+      kicker: "비율 계산",
     },
     freelance: {
       title: "프리랜서 단가 계산기",

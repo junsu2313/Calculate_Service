@@ -7,7 +7,7 @@
     age: "생활",
     bmi: "생활",
     percent: "생활",
-    discount: "쇼핑",
+    discount: "생활",
     vat: "사업",
     margin: "사업",
     breakeven: "사업",
@@ -52,7 +52,7 @@
       return Object.entries(catalog).map(([key, item]) => ({ key, ...item }));
     }
 
-    const categoryWords = ["금융", "생활", "쇼핑", "사업"];
+    const categoryWords = ["금융", "생활", "사업"];
     const normalizedCategories = categoryWords.map((item) => item.toLowerCase());
     const matchedCategories = categoryWords.filter((category) => tokens.includes(category.toLowerCase()));
     const searchTokens = tokens.filter((token) => !normalizedCategories.includes(token));

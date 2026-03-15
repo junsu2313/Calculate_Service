@@ -6,7 +6,6 @@
       "/calculators/",
       "/calculators/finance/",
       "/calculators/life/",
-      "/calculators/shopping/",
       "/calculators/business/",
       "/calculators/search/",
       "/notices/",
