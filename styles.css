@@ -1272,6 +1272,46 @@ details p {
   overflow-wrap: break-word;
 }
 
+.surface-note strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.surface-note p {
+  margin: 0;
+}
+
+.surface-note-actions {
+  margin-top: 16px;
+}
+
+.surface-note-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.surface-note-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+
+:root[data-theme="dark"] .surface-note-link {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f4f6fa;
+}
+
 .premium-insight-card {
   padding: 24px;
   border-radius: var(--radius-lg);
