@@ -1156,52 +1156,6 @@ details p {
   line-height: 1.8;
 }
 
-.salary-preset-bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 18px;
-  color: var(--muted);
-}
-
-.salary-preset-bar span {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.salary-preset-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.salary-preset-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.56);
-  border: 1px solid var(--line);
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-}
-
-.salary-preset-link:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-strong);
-}
-
-:root[data-theme="dark"] .salary-preset-link {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: #f4f6fa;
-}
-
 .article-card h2 {
   margin-bottom: 18px;
 }
