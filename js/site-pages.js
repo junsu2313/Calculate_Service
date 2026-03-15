@@ -24,6 +24,7 @@
       "/calculators/vat/",
       "/calculators/margin/",
       "/calculators/breakeven/",
+      "/calculators/breakeven-detail/",
       "/calculators/settlement/",
       "/calculators/estimate/",
       "/calculators/fixedcost/",

@@ -1904,6 +1904,109 @@ details p {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.premium-graph-card {
+  overflow: hidden;
+}
+
+.breakeven-graph {
+  display: grid;
+  gap: 14px;
+}
+
+.breakeven-graph svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--line);
+}
+
+.breakeven-axis {
+  stroke: rgba(15, 23, 42, 0.26);
+  stroke-width: 1.4;
+}
+
+.breakeven-line {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.breakeven-line.sales {
+  stroke: #2f7cf6;
+}
+
+.breakeven-line.cost {
+  stroke: #ff7a59;
+}
+
+.breakeven-line.fixed {
+  stroke: #8a97ad;
+  stroke-dasharray: 8 6;
+}
+
+.breakeven-point {
+  fill: #2f7cf6;
+}
+
+.breakeven-expected {
+  fill: #16a34a;
+}
+
+.breakeven-label,
+.breakeven-axis-label {
+  fill: var(--text);
+  font-size: 12px;
+}
+
+.breakeven-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.breakeven-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breakeven-legend i {
+  width: 18px;
+  height: 3px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.breakeven-legend .sales {
+  background: #2f7cf6;
+}
+
+.breakeven-legend .cost {
+  background: #ff7a59;
+}
+
+.breakeven-legend .fixed {
+  background: #8a97ad;
+}
+
+:root[data-theme="dark"] .breakeven-graph svg {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .breakeven-axis {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme="dark"] .breakeven-label,
+:root[data-theme="dark"] .breakeven-axis-label {
+  fill: rgba(255, 255, 255, 0.88);
+}
+
 :root[data-theme="dark"] .directory-search input {
   background: rgba(12, 16, 22, 0.88);
 }

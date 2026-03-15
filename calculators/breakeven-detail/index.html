@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>손익분기점 상세 계산 | 생활 속 계산기</title>
+    <meta
+      name="description"
+      content="고정비, 판매가, 변동비, 예상 판매 수량을 반영해 손익분기점을 그래프로 확인하는 상세 계산 페이지입니다."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="손익분기점 상세 계산 | 생활 속 계산기" />
+    <meta
+      property="og:description"
+      content="손익분기점 수량과 매출선, 총비용선을 한 화면에서 그래프로 확인해 보세요."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://calc.underlab.work/calculators/breakeven-detail/" />
+    <link rel="canonical" href="https://calc.underlab.work/calculators/breakeven-detail/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529176175465863" crossorigin="anonymous"></script>
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/breakeven-detail.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="breakeven-detail">
+    <div class="page-shell">
+      <nav class="topbar">
+        <a class="brand" href="../../">생활 속 계산기</a>
+        <div class="topbar-actions">
+          <div class="topbar-links">
+            <a href="../../">홈</a>
+            <a href="../breakeven/">기본 손익분기점 계산기</a>
+            <a href="../../notices/">공지사항</a>
+            <a href="../fixedcost/">월 고정비</a>
+          </div>
+          <button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button>
+        </div>
+      </nav>
+
+      <header class="calc-hero section salary-hero">
+        <div class="crumbs"><a href="../../">홈</a> / <a href="../breakeven/">손익분기점 계산기</a> / 손익분기점 상세 계산</div>
+        <p class="eyebrow">사업 계산기</p>
+        <h1>손익분기점 상세 계산</h1>
+        <p class="article-lead">
+          예상 판매 수량까지 반영해서, 매출선과 총비용선이 어디에서 만나는지 그래프로 확인할 수 있습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="ghost-btn" href="../breakeven/">기본 계산기로 돌아가기</a>
+          <button class="ghost-btn" id="shareButton" type="button">링크 복사</button>
+        </div>
+      </header>
+
+      <main class="section article-grid">
+        <article class="article-card">
+          <h2>상세 입력으로 계산</h2>
+          <form class="form-grid">
+            <label>
+              월 고정비
+              <input type="number" id="breakevenFixedCost" min="0" max="1000000000" step="1" value="3000000" />
+            </label>
+            <label>
+              제품 판매가
+              <input type="number" id="breakevenUnitPrice" min="0" max="1000000000" step="1" value="50000" />
+            </label>
+            <label>
+              단위당 변동비
+              <input type="number" id="breakevenVariableCost" min="0" max="1000000000" step="1" value="22000" />
+            </label>
+            <label>
+              예상 판매 수량
+              <input type="number" id="breakevenExpectedUnits" min="0" max="1000000000" step="1" value="140" />
+            </label>
+          </form>
+
+          <div class="premium-insight-card">
+            <div class="premium-insight-head">
+              <div>
+                <p class="mini-label">상세 보기</p>
+                <h3>손익분기점 그래프</h3>
+              </div>
+              <span class="status-chip premium-chip">매출선 비교</span>
+            </div>
+            <p class="premium-insight-copy">
+              매출선이 총비용선을 넘는 지점을 손익분기점으로 보고, 예상 판매 수량이 그보다 앞인지 뒤인지 함께 확인합니다.
+            </p>
+            <div class="premium-payslip" id="breakevenDetailResult"></div>
+          </div>
+
+          <details class="surface-note" open>
+            <summary>그래프는 어떻게 읽으면 되나요?</summary>
+            <p>각 항목이 어떤 의미인지 자세히 볼 수 있습니다.</p>
+            <div class="faq-list">
+              <article>
+                <strong>매출선은 무엇인가요?</strong>
+                <p>수량이 늘어날수록 판매가를 기준으로 얼마나 매출이 쌓이는지 보여주는 선입니다.</p>
+              </article>
+              <article>
+                <strong>총비용선은 무엇인가요?</strong>
+                <p>고정비와 변동비를 합한 전체 비용입니다. 처음에는 고정비만큼 올라가 있고, 판매 수량이 늘수록 변동비만큼 같이 올라갑니다.</p>
+              </article>
+              <article>
+                <strong>손익분기점은 어디인가요?</strong>
+                <p>매출선과 총비용선이 만나는 지점입니다. 이 지점부터는 적자를 벗어나기 시작한다고 이해하면 됩니다.</p>
+              </article>
+            </div>
+          </details>
+        </article>
+
+        <aside class="sidebar-stack">
+          <div class="mini-card">
+            <p class="mini-label">같이 보기</p>
+            <div class="related-grid">
+              <a class="related-card" href="../fixedcost/">
+                <strong>월 고정비 계산기</strong>
+                <p>월 고정비를 먼저 합산해 손익분기점 계산에 바로 반영할 수 있습니다.</p>
+              </a>
+              <a class="related-card" href="../margin/">
+                <strong>마진율 계산기</strong>
+                <p>건당 공헌이익과 마진 구조를 따로 확인할 수 있습니다.</p>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
