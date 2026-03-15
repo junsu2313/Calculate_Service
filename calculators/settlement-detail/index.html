@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정산 상세 계산 | 생활 속 계산기</title>
+    <meta name="description" content="환불, 쿠폰 부담금, 부가세 보관액까지 반영한 정산 상세 계산 페이지입니다." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="정산 상세 계산 | 생활 속 계산기" />
+    <meta property="og:description" content="환불과 쿠폰 부담금까지 반영한 실제 정산 흐름을 확인해 보세요." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://calc.underlab.work/calculators/settlement-detail/" />
+    <link rel="canonical" href="https://calc.underlab.work/calculators/settlement-detail/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529176175465863" crossorigin="anonymous"></script>
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/settlement-detail.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="settlement-detail">
+    <div class="page-shell">
+      <nav class="topbar"><a class="brand" href="../../">생활 속 계산기</a><div class="topbar-actions"><div class="topbar-links"><a href="../../">홈</a><a href="../settlement/">기본 정산 계산기</a><a href="../../notices/">공지사항</a><a href="../vat/">부가세</a></div><button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button></div></nav>
+      <header class="calc-hero section salary-hero"><div class="crumbs"><a href="../../">홈</a> / <a href="../settlement/">정산 계산기</a> / 정산 상세 계산</div><p class="eyebrow">사업 계산기</p><h1>정산 상세 계산</h1><p class="article-lead">환불, 쿠폰 부담금, 부가세 보관액까지 반영해 실제로 남는 정산 흐름을 더 자세히 계산할 수 있습니다.</p><div class="hero-actions"><a class="ghost-btn" href="../settlement/">기본 계산기로 돌아가기</a><button class="ghost-btn" id="shareButton" type="button">링크 복사</button></div></header>
+      <main class="section article-grid"><article class="article-card"><h2>상세 입력으로 계산</h2><form class="form-grid"><label>총 매출<input type="number" id="settlementDetailSales" min="0" max="1000000000" step="1" value="1200000" /></label><label>수수료율(%)<input type="number" id="settlementDetailFeeRate" min="0" max="100" step="0.1" value="12" /></label><label>배송비<input type="number" id="settlementDetailShipping" min="0" max="1000000000" step="1" value="50000" /></label><label>광고비<input type="number" id="settlementDetailAdCost" min="0" max="1000000000" step="1" value="30000" /></label><label>환불 금액<input type="number" id="settlementDetailRefund" min="0" max="1000000000" step="1" value="0" /></label><label>쿠폰 부담금<input type="number" id="settlementDetailCoupon" min="0" max="1000000000" step="1" value="0" /></label><label>부가세 보관 비율(%)<input type="number" id="settlementDetailVatReserveRate" min="0" max="100" step="0.1" value="10" /></label></form><div class="premium-payslip" id="settlementDetailResult"></div></article><aside class="sidebar-stack"><div class="mini-card"><p class="mini-label">같이 보기</p><div class="related-grid"><a class="related-card" href="../margin/"><strong>마진율 계산기</strong><p>건당 마진 구조를 먼저 확인할 수 있습니다.</p></a><a class="related-card" href="../estimate/"><strong>견적 계산기</strong><p>판매 전 견적 총액을 계산할 수 있습니다.</p></a></div></div></aside></main>
+    </div>
+  </body>
+</html>

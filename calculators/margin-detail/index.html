@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마진 상세 계산 | 생활 속 계산기</title>
+    <meta name="description" content="수수료, 배송비, 광고비까지 반영해 실제 건당 이익을 계산하는 마진 상세 계산 페이지입니다." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="마진 상세 계산 | 생활 속 계산기" />
+    <meta property="og:description" content="플랫폼 수수료와 배송비까지 반영한 실제 마진을 확인해 보세요." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://calc.underlab.work/calculators/margin-detail/" />
+    <link rel="canonical" href="https://calc.underlab.work/calculators/margin-detail/" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529176175465863" crossorigin="anonymous"></script>
+    <script defer src="../../js/common.js"></script>
+    <script defer src="../../js/site-pages.js"></script>
+    <script defer src="../../theme.js"></script>
+    <script defer src="../../js/pages/margin-detail.js"></script>
+    <script defer src="../../js/calculators.js"></script>
+  </head>
+  <body class="calc-page" data-calculator="margin-detail">
+    <div class="page-shell">
+      <nav class="topbar"><a class="brand" href="../../">생활 속 계산기</a><div class="topbar-actions"><div class="topbar-links"><a href="../../">홈</a><a href="../margin/">기본 마진율 계산기</a><a href="../../notices/">공지사항</a><a href="../settlement/">정산</a></div><button class="ghost-btn theme-toggle" id="themeToggle" type="button">다크 모드</button></div></nav>
+      <header class="calc-hero section salary-hero"><div class="crumbs"><a href="../../">홈</a> / <a href="../margin/">마진율 계산기</a> / 마진 상세 계산</div><p class="eyebrow">사업 계산기</p><h1>마진 상세 계산</h1><p class="article-lead">수수료와 배송비, 광고비까지 반영해 실제 건당 이익과 순마진율을 계산할 수 있습니다.</p><div class="hero-actions"><a class="ghost-btn" href="../margin/">기본 계산기로 돌아가기</a><button class="ghost-btn" id="shareButton" type="button">링크 복사</button></div></header>
+      <main class="section article-grid"><article class="article-card"><h2>상세 입력으로 계산</h2><form class="form-grid"><label>판매가<input type="number" id="marginDetailPrice" min="0" max="1000000000" step="1" value="50000" /></label><label>원가<input type="number" id="marginDetailCost" min="0" max="1000000000" step="1" value="32000" /></label><label>플랫폼 수수료율(%)<input type="number" id="marginDetailPlatformFee" min="0" max="100" step="0.1" value="8" /></label><label>결제 수수료율(%)<input type="number" id="marginDetailPaymentFee" min="0" max="100" step="0.1" value="3" /></label><label>건당 배송비<input type="number" id="marginDetailShipping" min="0" max="1000000000" step="1" value="3000" /></label><label>건당 광고비<input type="number" id="marginDetailAdCost" min="0" max="1000000000" step="1" value="1500" /></label></form><div class="premium-payslip" id="marginDetailResult"></div></article><aside class="sidebar-stack"><div class="mini-card"><p class="mini-label">같이 보기</p><div class="related-grid"><a class="related-card" href="../breakeven/"><strong>손익분기점 계산기</strong><p>건당 공헌이익을 기준으로 손익분기점을 계산합니다.</p></a><a class="related-card" href="../settlement/"><strong>정산 계산기</strong><p>월 단위 정산 흐름을 계산합니다.</p></a></div></div></aside></main>
+    </div>
+  </body>
+</html>

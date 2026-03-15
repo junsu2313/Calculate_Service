@@ -20,12 +20,17 @@
   <url><loc>https://calc.underlab.work/calculators/freelance/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/freelance-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/vat/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.underlab.work/calculators/vat-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/margin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.underlab.work/calculators/margin-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/breakeven/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/breakeven-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/settlement/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.underlab.work/calculators/settlement-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/estimate/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.underlab.work/calculators/estimate-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/calculators/fixedcost/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://calc.underlab.work/calculators/fixedcost-detail/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://calc.underlab.work/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://calc.underlab.work/privacy/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://calc.underlab.work/contact/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
