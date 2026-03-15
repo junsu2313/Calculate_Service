@@ -1272,6 +1272,125 @@ details p {
   overflow-wrap: break-word;
 }
 
+.premium-insight-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(244, 247, 255, 0.76));
+  border: 1px solid rgba(29, 78, 216, 0.14);
+}
+
+:root[data-theme="dark"] .premium-insight-card {
+  background: linear-gradient(180deg, rgba(24, 31, 42, 0.92), rgba(18, 24, 35, 0.9));
+  border-color: rgba(127, 178, 255, 0.2);
+}
+
+.premium-insight-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.premium-chip {
+  background: rgba(29, 78, 216, 0.08);
+  color: var(--brand);
+}
+
+.premium-insight-copy,
+.premium-caption {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.premium-grid {
+  margin-top: 18px;
+}
+
+.premium-payslip {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.premium-payslip-grid,
+.premium-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.premium-breakdown-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.premium-payslip-summary,
+.premium-breakdown-card {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--line);
+}
+
+:root[data-theme="dark"] .premium-payslip-summary,
+:root[data-theme="dark"] .premium-breakdown-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.premium-payslip-summary span,
+.premium-breakdown-card h4 {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.premium-payslip-summary span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.premium-payslip-summary strong {
+  display: block;
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.premium-payslip-summary p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.premium-breakdown-card h4 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.premium-breakdown-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.premium-breakdown-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.premium-breakdown-list dt,
+.premium-breakdown-list dd {
+  margin: 0;
+}
+
+.premium-breakdown-list dt {
+  color: var(--muted);
+}
+
+.premium-breakdown-list dd {
+  font-weight: 700;
+}
+
 @media (max-width: 960px) {
   .hero-grid,
   .intro-band,
@@ -1617,5 +1736,10 @@ details p {
 
   .category-bar-meta {
     justify-self: start;
+  }
+
+  .premium-payslip-grid,
+  .premium-breakdown-grid {
+    grid-template-columns: 1fr;
   }
 }
