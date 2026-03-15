@@ -1284,6 +1284,26 @@ details p {
   margin: 0;
 }
 
+.surface-note .faq-list {
+  margin-top: 16px;
+}
+
+.surface-note .faq-list article {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line);
+}
+
+:root[data-theme="dark"] .surface-note .faq-list article {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.surface-note .faq-list strong {
+  margin-bottom: 6px;
+}
+
 .surface-note-actions {
   margin-top: 16px;
 }
