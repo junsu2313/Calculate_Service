@@ -40,10 +40,10 @@
     };
 
     const renderSummary = () => {
-      const lunarInfo = getLunarInfo(selectedDate, lunarFormatter);
       const diffDays = Math.round((selectedDate.getTime() - today.getTime()) / 86400000);
       const relation =
         diffDays === 0 ? "오늘 기준 같은 날" : diffDays > 0 ? `오늘로부터 ${formatNumber(diffDays)}일 후` : `오늘보다 ${formatNumber(Math.abs(diffDays))}일 전`;
+      const termGuide = getDateTermGuide(diffDays);
 
       summary.innerHTML = `
         <div class="premium-payslip-grid">
@@ -53,13 +53,9 @@
             <p>학교 일정, 계약일, 일반 달력에서 바로 쓰는 기준 날짜입니다.</p>
           </article>
           <article class="premium-payslip-summary">
-            <span>선택한 음력 날짜</span>
-            <strong>${lunarInfo.label}</strong>
-            <p>${lunarInfo.isLeap ? "윤달이 포함된 날짜입니다." : "일반 음력 날짜입니다."}</p>
-          </article>
-          <article class="premium-payslip-summary">
             <span>오늘 기준</span>
             <strong>${relation}</strong>
+            <p>${termGuide}</p>
           </article>
         </div>
       `;
@@ -145,6 +141,19 @@
       day,
       isLeap,
     };
+  }
+
+  function getDateTermGuide(diffDays) {
+    if (diffDays === 0) {
+      return "이 날짜는 금일 또는 당일이라고도 표현합니다.";
+    }
+    if (diffDays === 1) {
+      return "이 날짜는 명일 또는 익일이라고도 표현합니다.";
+    }
+    if (diffDays === -1) {
+      return "이 날짜는 작일 또는 전일이라고도 표현합니다.";
+    }
+    return "이 날짜를 딱 가리키는 짧은 한자어 표현은 보통 쓰지 않으므로 숫자로 풀어 쓰는 편이 더 자연스럽습니다.";
   }
 
   function isSameDate(left, right) {
