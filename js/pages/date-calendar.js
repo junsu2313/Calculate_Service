@@ -1,5 +1,5 @@
 (function () {
-  const { formatNumber } = window.LifeCalcUtils;
+  const { formatDateInputValue, parseDateInput, formatNumber } = window.LifeCalcUtils;
 
   function initDateCalendarPage() {
     const monthLabel = document.getElementById("calendarMonthLabel");
