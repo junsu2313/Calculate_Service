@@ -56,12 +56,6 @@
       <main class="section article-grid">
         <article class="article-card">
           <h2>달력 보기</h2>
-          <form class="form-grid">
-            <label>
-              기준 날짜
-              <input type="text" id="calendarSelectedDate" inputmode="numeric" maxlength="10" placeholder="2026-03-15" />
-            </label>
-          </form>
 
           <div class="calendar-toolbar">
             <button class="ghost-btn" id="calendarPrevMonth" type="button">이전 달</button>
@@ -86,6 +80,13 @@
             </div>
             <div class="calendar-grid" id="dateCalendarGrid"></div>
           </div>
+
+          <form class="form-grid">
+            <label>
+              기준 날짜
+              <input type="text" id="calendarSelectedDate" inputmode="numeric" maxlength="10" placeholder="2026-03-15" />
+            </label>
+          </form>
 
           <details class="surface-note" open>
             <summary>음력과 윤달은 어떻게 읽으면 되나요?</summary>
