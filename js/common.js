@@ -140,6 +140,33 @@
     });
   }
 
+  function appendHubLinks() {
+    const path = window.location.pathname;
+    if (path.startsWith("/admin/") || path.startsWith("/admin_hub/")) {
+      return;
+    }
+
+    const hubUrl = "https://underlab.work/";
+    const navLinks = document.querySelector(".topbar-links");
+    const footerLinks = document.querySelector(".footer-links");
+
+    if (navLinks && !navLinks.querySelector(`[href="${hubUrl}"]`)) {
+      const link = document.createElement("a");
+      link.href = hubUrl;
+      link.textContent = "Underlab";
+      navLinks.appendChild(link);
+    }
+
+    if (footerLinks && !footerLinks.querySelector(`[href="${hubUrl}"]`)) {
+      const link = document.createElement("a");
+      link.href = hubUrl;
+      link.textContent = "Underlab 허브";
+      footerLinks.appendChild(link);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", appendHubLinks);
+
   window.LifeCalcUtils = {
     constants,
     formatWon,
@@ -153,5 +180,6 @@
     getMonthDayDiff,
     setResultCard,
     bindShare,
+    appendHubLinks,
   };
 })();
