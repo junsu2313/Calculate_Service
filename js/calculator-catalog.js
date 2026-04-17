@@ -54,6 +54,12 @@
       href: "/calculators/discount/",
       kicker: "비율 계산",
     },
+    used: {
+      title: "중고거래 순수익 계산기",
+      description: "판매가, 수수료, 택배비를 반영해 실제 순수익을 계산합니다.",
+      href: "/calculators/used/",
+      kicker: "거래 계산",
+    },
     freelance: {
       title: "프리랜서 단가 계산기",
       description: "목표 수입 기준 일당과 시간당 단가를 계산합니다.",

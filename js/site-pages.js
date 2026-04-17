@@ -23,6 +23,7 @@
       "/calculators/age/",
       "/calculators/percent/",
       "/calculators/discount/",
+      "/calculators/used/",
       "/calculators/freelance/",
       "/calculators/freelance-detail/",
       "/calculators/vat/",
